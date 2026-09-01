@@ -737,7 +737,7 @@ export const AdminPanel: React.FC = () => {
                     required
                     value={newUserEmail}
                     onChange={(e) => setNewUserEmail(e.target.value)}
-                    placeholder="venkatesh.survey@bhubharat.gov.in"
+                    placeholder="venkatesh.survey@geonexa.gov.in"
                     className="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs focus:outline-none"
                   />
                 </div>

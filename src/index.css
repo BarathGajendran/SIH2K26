@@ -2,7 +2,7 @@
 
 @layer base {
   /* ==========================================================================
-     1. DEFAULT LIGHT (Light Clean - Slate & Modern Teal)
+     STANDARD THEME (Clean, High-Contrast Modern Cadastre Design)
      ========================================================================== */
   :root {
     --theme-bg-main: #f8fafc;
@@ -24,78 +24,6 @@
     --accent-glow: rgba(15, 118, 110, 0.15);
   }
 
-  /* ==========================================================================
-     2. AGRI EMERALD (Vibrant agricultural lush green & jade)
-     ========================================================================== */
-  .theme-emerald {
-    --theme-bg-main: #f0fdf4;
-    --theme-bg-surface: #ffffff;
-    --theme-bg-elevated: #ffffff;
-    --theme-bg-subtle: #dcfce7;
-    --theme-border: #bbf7d0;
-    --theme-border-subtle: #dcfce7;
-    --theme-border-accent: #86efac;
-    --theme-text-title: #064e3b;
-    --theme-text-body: #065f46;
-    --theme-text-muted: #047857;
-    --theme-accent: #059669;
-    --theme-accent-hover: #047857;
-    --theme-accent-light: #ecfdf5;
-    --theme-accent-text: #047857;
-    --theme-gradient-hero: linear-gradient(135deg, #047857 0%, #059669 50%, #0d9488 100%);
-    --theme-gradient-btn: linear-gradient(135deg, #059669 0%, #10b981 100%);
-    --accent-glow: rgba(16, 185, 129, 0.25);
-  }
-
-  /* ==========================================================================
-     3. BHARAT SAFFRON (Warm sunrise amber, golden saffron, terracotta)
-     ========================================================================== */
-  .theme-saffron {
-    --theme-bg-main: #fffbeb;
-    --theme-bg-surface: #ffffff;
-    --theme-bg-elevated: #ffffff;
-    --theme-bg-subtle: #fef3c7;
-    --theme-border: #fde68a;
-    --theme-border-subtle: #fef3c7;
-    --theme-border-accent: #fcd34d;
-    --theme-text-title: #451a03;
-    --theme-text-body: #78350f;
-    --theme-text-muted: #92400e;
-    --theme-accent: #d97706;
-    --theme-accent-hover: #b45309;
-    --theme-accent-light: #fffbeb;
-    --theme-accent-text: #b45309;
-    --theme-gradient-hero: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #b45309 100%);
-    --theme-gradient-btn: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-    --accent-glow: rgba(245, 158, 11, 0.25);
-  }
-
-  /* ==========================================================================
-     4. OCEAN AZURE (Deep sky blue & coastal cyan GIS clarity)
-     ========================================================================== */
-  .theme-ocean {
-    --theme-bg-main: #f0f9ff;
-    --theme-bg-surface: #ffffff;
-    --theme-bg-elevated: #ffffff;
-    --theme-bg-subtle: #e0f2fe;
-    --theme-border: #bae6fd;
-    --theme-border-subtle: #e0f2fe;
-    --theme-border-accent: #7dd3fc;
-    --theme-text-title: #082f49;
-    --theme-text-body: #075985;
-    --theme-text-muted: #0369a1;
-    --theme-accent: #0284c7;
-    --theme-accent-hover: #0369a1;
-    --theme-accent-light: #f0f9ff;
-    --theme-accent-text: #0284c7;
-    --theme-gradient-hero: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #0369a1 100%);
-    --theme-gradient-btn: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-    --accent-glow: rgba(14, 165, 233, 0.25);
-  }
-
-  /* ==========================================================================
-     5. NIGHT SATELLITE (Cyber dark mode, deep space navy with neon indigo/cyan)
-     ========================================================================== */
   .dark {
     --theme-bg-main: #020617;
     --theme-bg-surface: #0f172a;

@@ -152,12 +152,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     document.documentElement.classList.remove('dark', 'theme-emerald', 'theme-saffron', 'theme-ocean');
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
-    } else if (newTheme === 'emerald') {
-      document.documentElement.classList.add('theme-emerald');
-    } else if (newTheme === 'saffron') {
-      document.documentElement.classList.add('theme-saffron');
-    } else if (newTheme === 'ocean') {
-      document.documentElement.classList.add('theme-ocean');
     }
   };
 

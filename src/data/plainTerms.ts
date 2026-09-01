@@ -90,6 +90,17 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     example: 'The console displays green "RTK FIXED (±1.4 cm)" before allowing the surveyor to save Point P1.',
     category: 'SURVEY_TECH',
   },
+  {
+    term: 'GeoNexa Autonomous Drone Mapping',
+    hindiName: 'ड्रोन आधारित डिजिटल भू-सर्वेक्षण',
+    tamilName: 'ட்ரோன் மூலமான வான்வழி நில அளவை',
+    simpleDefinition:
+      'Autonomous aerial surveying where a specialized drone flies across an agricultural plot taking hundreds of overlapping high-resolution photos, stitched into an orthomosaic map accurate to 1.2 cm per pixel.',
+    whyItMatters:
+      'Covers 50 acres in minutes, penetrates dense crop cover, provides photographic proof of boundaries, and automatically identifies corner stones and fence lines.',
+    example: 'GeoNexa connects directly to the survey drone, generates a cross-hatch flight grid, and stitches orthophoto maps in real time.',
+    category: 'SURVEY_TECH',
+  },
 ];
 
 export const UNIT_CONVERSIONS = [

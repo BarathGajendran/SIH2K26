@@ -1,6 +1,6 @@
 {
-  "name": "BHU-BHARAT GNSS Land Survey & Resurvey Platform",
-  "description": "Digital agricultural land survey, resurvey, CORS/NTRIP RTK correction, PostGIS spatial verification, and boundary encroachment detection platform for India.",
+  "name": "GeoNexa",
+  "description": "GeoNexa: Modern agricultural land cadastre, direct drone photogrammetry connection, satellite RTK precision surveying, and citizen e-Patta portal.",
   "requestFramePermissions": ["geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

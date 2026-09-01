@@ -30,8 +30,8 @@ async function startServer() {
   app.get('/api/health', (req, res) => {
     res.json({
       status: 'ok',
-      service: 'BHU-BHARAT GNSS Land Survey & Resurvey Platform',
-      version: '1.0.0',
+      service: 'GeoNexa Digital Land Cadastre & Drone Mapping Platform',
+      version: '2.0.0',
       timestamp: new Date().toISOString(),
     });
   });
@@ -52,7 +52,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[BHU-BHARAT] Server running on http://0.0.0.0:${PORT}`);
+    console.log(`[GeoNexa] Server running on http://0.0.0.0:${PORT}`);
   });
 }
 

@@ -24,15 +24,15 @@ export const PresentationModal: React.FC<PresentationModalProps> = ({ isOpen, on
 
   const slides = [
     {
-      title: 'BHU-BHARAT: Next-Gen Digital Cadastral Infrastructure',
-      subtitle: 'Modernizing Agricultural Land Survey & Boundary Governance in India',
+      title: 'GeoNexa: Next-Gen Digital Cadastral Infrastructure',
+      subtitle: 'Modernizing Agricultural Land Survey, Drone Photogrammetry & Boundary Governance',
       icon: Satellite,
       tag: 'VISION & ARCHITECTURE',
       points: [
-        'Replacing manual chain and theodolite surveying with sub-centimeter multi-frequency GNSS/RTK.',
-        'Seamless integration with Survey of India (SoI) CORS network broadcasting RTCM 3.2 MSM4 corrections.',
-        'High-precision carrier-phase ambiguity resolution leveraging NavIC (IRNSS), GPS, GLONASS, and Galileo.',
-        'PostGIS spatial verification engine preventing boundary disputes and automated encroachment detection.',
+        'Replacing manual chain and optical theodolites with sub-centimeter multi-frequency GNSS/RTK and autonomous drone mapping.',
+        'Seamless integration with national CORS network broadcasting RTCM 3.2 MSM4 geodetic corrections.',
+        'High-precision carrier-phase ambiguity resolution leveraging NavIC (IRNSS), GPS, GLONASS, and Galileo constellations.',
+        'PostGIS spatial verification engine preventing boundary disputes with automated encroachment detection and AI assistance.',
       ],
     },
     {
@@ -41,10 +41,22 @@ export const PresentationModal: React.FC<PresentationModalProps> = ({ isOpen, on
       icon: Radio,
       tag: 'GEODETIC CORRECTION',
       points: [
-        'NTRIP v2.0 Client connects to state & national reference network on port 2101.',
+        'NTRIP v2.0 client connects to state & national reference towers on port 2101.',
         'Sub-second correction latency (avg. 120ms) broadcasting dual-frequency L1/L2 and L5 carrier observables.',
         'Automatic ambiguity resolution switching from SINGLE (±1.5m) to FLOAT (±8cm) to FIXED (±1.4cm).',
-        'Hardware-agnostic driver layer supporting Trimble, Leica, South, CHCNAV, and simulated GNSS rovers.',
+        'Open NMEA-0183 & RTCM 3.2 software protocol engine compatible with any standard GNSS field rover or drone telemetry link.',
+      ],
+    },
+    {
+      title: 'Autonomous Drone Aerial Photogrammetry',
+      subtitle: '1.1cm/px Ground Sampling Distance (GSD) for High-Throughput Cadastral Mapping',
+      icon: Zap,
+      tag: 'DRONE MAPPING HUB',
+      points: [
+        'Autonomous lawnmower flight path planning with 80% forward & 70% lateral overlap for high-density point clouds.',
+        'Direct software drone control link streaming real-time battery, satellite fix, altitude, and live orthomosaic stitching.',
+        'Automated edge detection identifying physical boundary bunds, stone markings, and field hedge vertices.',
+        'Seamless export to GIS cadastral map layers and instant Form-IV verification queue.',
       ],
     },
     {
@@ -60,14 +72,14 @@ export const PresentationModal: React.FC<PresentationModalProps> = ({ isOpen, on
       ],
     },
     {
-      title: 'DILRMP Compliance & Digital Governance Impact',
-      subtitle: 'Form-IV Digital Certification & Streamlined Revenue Administration',
+      title: 'DILRMP Compliance & Citizen Empowerment',
+      subtitle: 'Form-IV Digital Certification & Frictionless Mobile Land Governance',
       icon: ShieldCheck,
       tag: 'IMPACT & DEPLOYMENT',
       points: [
-        'Instant generation of Form-IV Digital Agricultural Land Survey Certificates with cryptographic seals.',
+        'Instant generation of Form-IV Digital Agricultural Land Survey Certificates with QR verification and cryptographic seals.',
+        'Dedicated Citizen / Farmer portal to view certified land records, calculate areas, and track resurvey requests.',
         'Reduces boundary dispute litigation time in revenue courts by over 80%.',
-        'Transparent multi-role access control for Field Surveyors, Revenue Officials (RDO), and Landowners.',
         'Production-ready scalable architecture built for nationwide rollout under Digital India Land Records.',
       ],
     },

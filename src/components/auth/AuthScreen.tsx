@@ -44,7 +44,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
   const [authMode, setAuthMode] = useState<'LOGIN' | 'REGISTER_FARMER'>('LOGIN');
   const [selectedRole, setSelectedRole] = useState<UserRole>('LANDOWNER');
   const [emailOrPhone, setEmailOrPhone] = useState<string>('');
-  const [password, setPassword] = useState<string>('bhubharat2025');
+  const [password, setPassword] = useState<string>('geonexa2025');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // Farmer registration fields
@@ -140,24 +140,13 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
             <Satellite className="w-6 h-6 animate-pulse" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-slate-100 font-mono">
-                BHU-BHARAT
-              </span>
-              <span className="px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 text-[10px] font-bold">
-                GNSS / RTK
-              </span>
-              <span className="hidden md:inline px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 text-[10px] font-bold">
-                DILRMP Compliant
-              </span>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              National Digital Agricultural Cadastre & Resurvey Governance Portal
-            </p>
+            <span className="text-base sm:text-lg font-black tracking-tight text-slate-900 dark:text-slate-100 font-mono">
+              GeoNexa
+            </span>
           </div>
         </div>
 
-        {/* Live Network Pill & Theme Switcher */}
+        {/* Live Network Pill & Standard Theme Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl text-xs font-mono">
             <span className="relative flex h-2 w-2">
@@ -169,43 +158,17 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
             <span className="text-slate-600 dark:text-slate-300">±1.4cm Fix</span>
           </div>
 
-          <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl border border-slate-200 dark:border-slate-700">
-            <button
-              onClick={() => setTheme('light')}
-              className={`p-1.5 rounded-xl transition-all ${theme === 'light' ? 'bg-white text-amber-600 shadow-sm' : 'text-slate-500 hover:text-slate-900 dark:hover:text-slate-100'}`}
-              title="Light Clean Theme"
-            >
-              <Sun className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setTheme('dark')}
-              className={`p-1.5 rounded-xl transition-all ${theme === 'dark' ? 'bg-slate-900 text-indigo-400 shadow-sm' : 'text-slate-500 hover:text-slate-900 dark:hover:text-slate-100'}`}
-              title="Night Satellite Dark Theme"
-            >
-              <Moon className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setTheme('emerald')}
-              className={`p-1.5 rounded-xl transition-all ${theme === 'emerald' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 dark:hover:text-slate-100'}`}
-              title="Agri Emerald Theme"
-            >
-              <Leaf className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setTheme('saffron')}
-              className={`p-1.5 rounded-xl transition-all ${theme === 'saffron' ? 'bg-amber-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 dark:hover:text-slate-100'}`}
-              title="Bharat Saffron Theme"
-            >
-              <Sparkles className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setTheme('ocean')}
-              className={`p-1.5 rounded-xl transition-all ${theme === 'ocean' ? 'bg-cyan-600 text-white shadow-sm' : 'text-slate-500 hover:text-slate-900 dark:hover:text-slate-100'}`}
-              title="Ocean Azure Theme"
-            >
-              <Compass className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+            title={theme === 'dark' ? 'Switch to Standard Light Theme' : 'Switch to Standard Dark Theme'}
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-amber-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-slate-600" />
+            )}
+          </button>
         </div>
       </header>
 
@@ -814,7 +777,7 @@ export const AuthScreen: React.FC<AuthScreenProps> = ({ onSuccess }) => {
       {/* Footer */}
       <footer className="px-6 py-4 border-t border-slate-200 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md text-center text-xs text-slate-500 dark:text-slate-400">
         <p>
-          Bhu-Bharat Digital Cadastral Infrastructure • Ministry of Rural Development & Survey of India • PostGIS & NavIC Geodetic Engine
+          GeoNexa Digital Cadastral Infrastructure & Drone Photogrammetry Platform • Survey of India Geodetic Standards • PostGIS Spatial Engine
         </p>
       </footer>
     </div>

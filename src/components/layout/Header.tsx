@@ -28,9 +28,10 @@ interface HeaderProps {
   onNavigate?: (tab: string) => void;
   onOpenDemo?: () => void;
   onOpenPresentation?: () => void;
+  onToggleMobileMenu?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo, onOpenPresentation }) => {
+export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo, onOpenPresentation, onToggleMobileMenu }) => {
   const {
     currentUser,
     switchUserRole,
@@ -119,7 +120,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo, onOpenPr
         };
       case 'SURVEYOR':
         return {
-          label: 'RTK Field Surveyor',
+          label: 'Field RTK Surveyor',
           bg: 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-800',
           icon: Satellite,
         };
@@ -144,26 +145,32 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo, onOpenPr
   return (
     <header className="bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 sticky top-0 z-40 px-3 sm:px-4 py-2.5 transition-colors shadow-xs">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
-        {/* Left: Branding & Govt Emblem */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white shadow-md shadow-emerald-600/30 border border-emerald-400/40">
-            <Compass className="w-5 h-5 animate-pulse" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="font-black tracking-tight text-base sm:text-lg text-emerald-600 dark:text-emerald-400 font-mono">
-                BHU-BHARAT
-              </span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 font-mono font-bold">
-                GNSS / RTK
-              </span>
-              <span className="hidden md:inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-700 font-mono">
-                🇮🇳 NavIC
+        {/* Left: Hamburger + Branding */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {onToggleMobileMenu && (
+            <button
+              onClick={onToggleMobileMenu}
+              className="p-1.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 md:hidden text-slate-600 dark:text-slate-300 cursor-pointer"
+              title="Toggle Menu Navigation"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          )}
+
+          <div
+            onClick={() => onNavigate && onNavigate('farmer')}
+            className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group"
+          >
+            <div className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform">
+              <Compass className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="font-black tracking-tight text-base sm:text-lg text-slate-900 dark:text-slate-100 font-mono">
+                GeoNexa
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 hidden lg:block">
-              Agricultural Land Resurvey, CORS Correction & Encroachment Detection
-            </p>
           </div>
         </div>
 
@@ -271,87 +278,18 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, onOpenDemo, onOpenPr
             <span className="sm:hidden">Demo</span>
           </button>
 
-          {/* Theme Selector Button & Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setIsThemeDropdownOpen(!isThemeDropdownOpen)}
-              className="p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1.5 transition-colors cursor-pointer"
-              title="Change Visual Theme"
-            >
-              {theme === 'light' && <Sun className="w-3.5 h-3.5 text-amber-500" />}
-              {theme === 'dark' && <Moon className="w-3.5 h-3.5 text-indigo-400" />}
-              {theme === 'emerald' && <Leaf className="w-3.5 h-3.5 text-emerald-500" />}
-              {theme === 'saffron' && <Sparkles className="w-3.5 h-3.5 text-amber-600" />}
-              {theme === 'ocean' && <Compass className="w-3.5 h-3.5 text-cyan-500" />}
-              <span className="hidden md:inline capitalize">{theme}</span>
-              <ChevronDown className="w-3 h-3 text-slate-400" />
-            </button>
-
-            {isThemeDropdownOpen && (
-              <div className="absolute right-0 mt-1.5 w-44 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl z-50 p-1.5 animate-fade-in">
-                <button
-                  onClick={() => {
-                    setTheme('light');
-                    setIsThemeDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer ${
-                    theme === 'light' ? 'bg-amber-50 text-amber-700 font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                  }`}
-                >
-                  <Sun className="w-3.5 h-3.5 text-amber-500" />
-                  <span>Light Clean</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setTheme('emerald');
-                    setIsThemeDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer ${
-                    theme === 'emerald' ? 'bg-emerald-50 text-emerald-700 font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                  }`}
-                >
-                  <Leaf className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Agri Emerald</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setTheme('saffron');
-                    setIsThemeDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer ${
-                    theme === 'saffron' ? 'bg-amber-100 text-amber-800 font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                  }`}
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                  <span>Bharat Saffron</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setTheme('ocean');
-                    setIsThemeDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer ${
-                    theme === 'ocean' ? 'bg-cyan-50 text-cyan-700 font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                  }`}
-                >
-                  <Compass className="w-3.5 h-3.5 text-cyan-500" />
-                  <span>Ocean Azure</span>
-                </button>
-                <button
-                  onClick={() => {
-                    setTheme('dark');
-                    setIsThemeDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center gap-2 transition-colors cursor-pointer ${
-                    theme === 'dark' ? 'bg-indigo-950 text-indigo-300 font-bold' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                  }`}
-                >
-                  <Moon className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>Night Satellite</span>
-                </button>
-              </div>
+          {/* Standard Theme Toggle (Light / Dark) */}
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs font-medium text-slate-700 dark:text-slate-300 flex items-center justify-center transition-colors cursor-pointer"
+            title={theme === 'dark' ? 'Switch to Standard Light Theme' : 'Switch to Standard Dark Theme'}
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-amber-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-slate-600" />
             )}
-          </div>
+          </button>
 
           {/* Portal Authentication & Role Switcher */}
           <div className="relative">

@@ -53,6 +53,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
       badge: currentUser?.role === 'LANDOWNER' ? 'CITIZEN' : undefined,
       badgeColor: 'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-700',
     },
+    // Drone Aerial Mapping Hub
+    {
+      id: 'drone',
+      label: 'Drone Aerial Cadastre',
+      icon: Sparkles,
+      description: 'Autonomous flight & 1.1cm GSD',
+      badge: 'DRONE',
+      badgeColor: 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border-cyan-300 dark:border-cyan-700',
+    },
     // Surveyor Live RTK
     {
       id: 'survey',

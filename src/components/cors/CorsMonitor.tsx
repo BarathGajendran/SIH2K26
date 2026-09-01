@@ -137,18 +137,18 @@ export const CorsMonitor: React.FC = () => {
         <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 font-mono text-xs">
           <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100 font-bold">
             <Code2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-            <span>Pluggable GNSSProvider Hardware Architecture</span>
+            <span>Pluggable GNSSProvider Software Driver Architecture</span>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-[11px] font-sans">
-            The platform isolates field hardware behind an extensible TypeScript provider interface:
+            The platform isolates field instruments behind an extensible TypeScript software provider interface:
           </p>
 
           <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-[11px] text-slate-700 dark:text-slate-300 space-y-2">
-            <div className="text-emerald-600 dark:text-emerald-400 font-bold">// Future Physical RTK Hardware Drivers:</div>
-            <div>• <strong className="text-slate-900 dark:text-slate-100">SimulationGNSSProvider</strong> (Demonstration Engine)</div>
-            <div>• <strong className="text-slate-900 dark:text-slate-100">BluetoothGNSSProvider</strong> (SPP / BLE Handheld Rovers)</div>
-            <div>• <strong className="text-slate-900 dark:text-slate-100">SerialGNSSProvider</strong> (USB NMEA-0183 / UBX / SBF)</div>
-            <div>• <strong className="text-slate-900 dark:text-slate-100">NetworkGNSSProvider</strong> (TCP / NTRIP Client Stream)</div>
+            <div className="text-emerald-600 dark:text-emerald-400 font-bold">// Pluggable Software Driver Protocols:</div>
+            <div>• <strong className="text-slate-900 dark:text-slate-100">SimulationGNSSProvider</strong> (Real-time Autonomous Geodesic Engine)</div>
+            <div>• <strong className="text-slate-900 dark:text-slate-100">DronePhotogrammetryProvider</strong> (Autonomous Flight & Aerial GSD Link)</div>
+            <div>• <strong className="text-slate-900 dark:text-slate-100">BluetoothGNSSProvider</strong> (BLE Standard Location Telemetry)</div>
+            <div>• <strong className="text-slate-900 dark:text-slate-100">NetworkNTRIPProvider</strong> (TCP / RTCM 3.2 Geodetic Stream)</div>
           </div>
         </div>
       </div>

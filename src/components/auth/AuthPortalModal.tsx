@@ -148,7 +148,7 @@ export const AuthPortalModal: React.FC<AuthPortalModalProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-base sm:text-lg font-black tracking-tight">BHU-BHARAT Unified Portal Authentication</h2>
+                <h2 className="text-base sm:text-lg font-black tracking-tight">GeoNexa Unified Portal Authentication</h2>
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-300 dark:border-emerald-700">
                   Role-Based Security
                 </span>

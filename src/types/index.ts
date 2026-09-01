@@ -1,5 +1,5 @@
 export type UserRole = 'LANDOWNER' | 'SURVEYOR' | 'OFFICIAL' | 'ADMIN';
-export type ThemeMode = 'light' | 'dark' | 'emerald' | 'saffron' | 'ocean';
+export type ThemeMode = 'light' | 'dark';
 
 export interface PortalInfo {
   id: UserRole;
@@ -265,3 +265,62 @@ export interface SpatialToleranceConfig {
   reviewThresholdM: number; // e.g. 2.0m
   encroachmentThresholdM: number; // e.g. 5.0m
 }
+
+export type DroneFlightStatus =
+  | 'DISCONNECTED'
+  | 'CONNECTING'
+  | 'CONNECTED'
+  | 'CALIBRATING'
+  | 'ARMED'
+  | 'FLYING'
+  | 'STITCHING'
+  | 'BOUNDARY_DETECTED'
+  | 'MISSION_COMPLETE';
+
+export interface DroneWaypoint {
+  id: string;
+  latitude: number;
+  longitude: number;
+  altitudeM: number;
+  speedMs: number;
+  status: 'PENDING' | 'REACHED' | 'ACTIVE';
+}
+
+export interface DroneDetectedVertex {
+  code: string; // e.g. "D-P1"
+  latitude: number;
+  longitude: number;
+  altitudeM: number;
+  confidencePct: number; // e.g. 98.4
+  markerType: 'CORNER_STONE' | 'FENCE_JUNCTION' | 'HEDGE_BORDER' | 'CANAL_BANK';
+}
+
+export interface DroneTelemetry {
+  id: string;
+  model: string; // e.g. "GeoNexa AeroScan-X4 Autonomous Drone"
+  status: DroneFlightStatus;
+  batteryPct: number;
+  altitudeM: number;
+  targetAltitudeM: number;
+  speedMs: number;
+  flightHeadingDeg: number;
+  currentWaypointIndex: number;
+  totalWaypoints: number;
+  waypoints: DroneWaypoint[];
+  gsdCmPerPixel: number; // Ground sampling distance e.g. 1.2 cm/pixel
+  orthophotoStitchProgressPct: number;
+  photosCaptured: number;
+  totalPhotosTarget: number;
+  signalStrengthPct: number;
+  latitude: number;
+  longitude: number;
+  flightDurationSec: number;
+  isCameraStreaming: boolean;
+  detectedVertices: DroneDetectedVertex[];
+  calculatedAreaAcres?: number;
+  calculatedAreaSqM?: number;
+  perimeterM?: number;
+  estimatedSurveyTimeMin?: number;
+  liveCameraMode: 'RGB_ORTHO' | 'NDVI_CROP' | 'THERMAL_SOIL' | 'ELEVATION_DSM';
+}
+

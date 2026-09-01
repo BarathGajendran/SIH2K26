@@ -80,7 +80,7 @@ export const ReportsView: React.FC = () => {
             [ Form IV — Issued under National Land Records Modernization Programme (DILRMP) ]
           </div>
           <div className="text-[11px] text-slate-500">
-            Certificate ID: <strong className="font-mono text-slate-900">BHU-CERT-{selectedParcel?.parcelNumber}</strong>
+            Certificate ID: <strong className="font-mono text-slate-900">GEONEXA-CERT-{selectedParcel?.parcelNumber}</strong>
           </div>
         </div>
 

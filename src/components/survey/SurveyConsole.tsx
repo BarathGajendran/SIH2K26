@@ -667,7 +667,7 @@ export const SurveyConsole: React.FC<SurveyConsoleProps> = ({ initialParcel, onV
                     Import Field GNSS CSV File
                   </h3>
                   <p className="text-xs text-slate-400 mt-1">
-                    Paste raw RTK coordinate logs or CSV exported from field data collectors (e.g. Trimble, Leica, South).
+                    Paste raw RTK coordinate logs or CSV exported from field data collectors, GNSS rovers, or photogrammetry exports.
                   </p>
                 </div>
 
