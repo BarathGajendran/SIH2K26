@@ -1,0 +1,108 @@
+import { PortalInfo } from '../types';
+
+export const PORTALS: Record<string, PortalInfo> = {
+  LANDOWNER: {
+    id: 'LANDOWNER',
+    title: 'Citizen Farmer & Landowner Portal',
+    shortTitle: 'Farmer / Landowner',
+    tagline: 'Check farm boundaries, Patta records & dispute alerts in plain terms',
+    badge: 'CITIZEN ACCESS',
+    iconName: 'MapPin',
+    description: 'Designed specifically for agricultural landholders, farmers, and property owners.',
+    plainTermsSummary:
+      'Here you can view your agricultural land on high-resolution maps, check if all 4 boundary corners match official government records, see if any neighbor has crossed your boundary line, and apply for a precision government resurvey with one tap.',
+    loginMethods: ['Mobile OTP', 'Patta / Passbook No.', 'Aadhaar e-KYC', 'Instant 1-Click Demo'],
+    demoUser: {
+      name: 'K. S. Ramasamy Gounder',
+      email: 'farmer@bhubharat.gov.in',
+      badge: 'PATTA-THOND-142',
+      organization: 'Agricultural Landholder (Thondamuthur Village)',
+    },
+    accentColor: 'emerald',
+    allowedTabs: ['parcels', 'gis', 'encroachments', 'documents', 'reports'],
+    keyFeatures: [
+      'View your land boundary plotted directly on satellite imagery',
+      'Plain-language dispute alerts if any neighbor extends into your land',
+      'Download official Patta/Chitta and Form IV Survey Certificates',
+      'Request government resurvey for boundary demarcation',
+    ],
+  },
+  SURVEYOR: {
+    id: 'SURVEYOR',
+    title: 'Licensed Field RTK Surveyor Portal',
+    shortTitle: 'RTK Field Surveyor',
+    tagline: 'Live GNSS rover tracking, CORS corrections & centimeter-precision point capture',
+    badge: 'SURVEY CREW',
+    iconName: 'Satellite',
+    description: 'Professional high-precision tools for certified cadastral and engineering surveyors.',
+    plainTermsSummary:
+      'Connect to GNSS/NavIC satellite rovers, stream real-time correction data from Survey of India CORS towers, capture corner boundary pegs with ±1.4cm precision, compute polygon area automatically, and submit resurveys.',
+    loginMethods: ['Surveyor License ID', 'Agency Token', 'Empanelled PIN', 'Instant 1-Click Demo'],
+    demoUser: {
+      name: 'K. Karthikeyan',
+      email: 'surveyor@bhubharat.gov.in',
+      badge: 'SURV-RTK-8902',
+      organization: 'National Cadastral Survey Agency / SoI Empanelled',
+    },
+    accentColor: 'cyan',
+    allowedTabs: ['survey', 'gis', 'parcels', 'cors', 'reports', 'documents'],
+    keyFeatures: [
+      'Live GNSS rover tracking with 28 Satellites (NavIC + GPS + GLONASS)',
+      'Sub-2cm RTK Fixed accuracy with instant audio & visual feedback',
+      'Point-by-point boundary peg collection and automatic loop closure',
+      'Automated area discrepancy calculation against legacy revenue records',
+    ],
+  },
+  OFFICIAL: {
+    id: 'OFFICIAL',
+    title: 'Revenue Department & Tahsildar Portal',
+    shortTitle: 'Revenue Officer (RDO)',
+    tagline: 'Review field surveys, adjudicate boundary disputes & issue legal certificates',
+    badge: 'GOVERNMENT AUTHORITY',
+    iconName: 'UserCheck',
+    description: 'For Revenue Divisional Officers (RDO), Tahsildars, and Settlement Officers.',
+    plainTermsSummary:
+      'Inspect surveyor submissions, examine high-resolution before-and-after spatial overlays, adjudicate land boundary disputes with neighbors, issue legal notices, and sign official digital Form IV survey records.',
+    loginMethods: ['Gov e-Pramaan ID', 'Officer Service No.', 'DSC Token', 'Instant 1-Click Demo'],
+    demoUser: {
+      name: 'Shri. M. Shanmugam',
+      email: 'official@bhubharat.gov.in',
+      badge: 'REV-OFF-4412',
+      organization: 'Revenue Divisional Office (RDO), Coimbatore North',
+    },
+    accentColor: 'amber',
+    allowedTabs: ['verification', 'encroachments', 'gis', 'parcels', 'reports', 'documents', 'dashboard'],
+    keyFeatures: [
+      'Comprehensive verification queue with side-by-side boundary diffs',
+      'Visual overlap analysis (ST_Intersection) with area discrepancy metrics',
+      'One-click approval or rejection with mandatory legal justification',
+      'Automatic generation and sealing of Government Form IV Certificates',
+    ],
+  },
+  ADMIN: {
+    id: 'ADMIN',
+    title: 'Survey of India / Super Admin Portal',
+    shortTitle: 'System Admin (IAS)',
+    tagline: 'National CORS network telemetry, spatial engine health & immutable audit logs',
+    badge: 'SYSTEM GOVERNANCE',
+    iconName: 'Shield',
+    description: 'Executive oversight, network infrastructure, and tamper-evident audit control.',
+    plainTermsSummary:
+      'Monitor live health of all Survey of India CORS satellite reference towers, check PostGIS spatial calculation latency, inspect immutable audit trails for every boundary modification, and oversee district-level statistics.',
+    loginMethods: ['Admin Master SSO', 'IAS Executive Clearance', '2FA Key', 'Instant 1-Click Demo'],
+    demoUser: {
+      name: 'Dr. Rajeshwari Ramanathan (IAS)',
+      email: 'admin@bhubharat.gov.in',
+      badge: 'IAS-2012-TN-098',
+      organization: 'Survey & Settlement Department, Govt of India',
+    },
+    accentColor: 'purple',
+    allowedTabs: ['dashboard', 'cors', 'gis', 'parcels', 'encroachments', 'verification', 'reports', 'documents'],
+    keyFeatures: [
+      'Live CORS base station telemetry, RTCM 3.2 stream latency & rover counts',
+      'Tamper-evident, immutable audit trail for all legal boundary actions',
+      'District and taluk-level agricultural land coverage analytics',
+      'Spatial engine configuration (tolerance thresholds & PostGIS geometry rules)',
+    ],
+  },
+};

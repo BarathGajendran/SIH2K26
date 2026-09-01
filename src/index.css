@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@layer base {
+  /* ==========================================================================
+     1. DEFAULT LIGHT (Light Clean - Slate & Modern Teal)
+     ========================================================================== */
+  :root {
+    --theme-bg-main: #f8fafc;
+    --theme-bg-surface: #ffffff;
+    --theme-bg-elevated: #ffffff;
+    --theme-bg-subtle: #f1f5f9;
+    --theme-border: #e2e8f0;
+    --theme-border-subtle: #f1f5f9;
+    --theme-border-accent: #99f6e4;
+    --theme-text-title: #0f172a;
+    --theme-text-body: #334155;
+    --theme-text-muted: #64748b;
+    --theme-accent: #0f766e;
+    --theme-accent-hover: #115e59;
+    --theme-accent-light: #f0fdfa;
+    --theme-accent-text: #0f766e;
+    --theme-gradient-hero: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #0284c7 100%);
+    --theme-gradient-btn: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+    --accent-glow: rgba(15, 118, 110, 0.15);
+  }
+
+  /* ==========================================================================
+     2. AGRI EMERALD (Vibrant agricultural lush green & jade)
+     ========================================================================== */
+  .theme-emerald {
+    --theme-bg-main: #f0fdf4;
+    --theme-bg-surface: #ffffff;
+    --theme-bg-elevated: #ffffff;
+    --theme-bg-subtle: #dcfce7;
+    --theme-border: #bbf7d0;
+    --theme-border-subtle: #dcfce7;
+    --theme-border-accent: #86efac;
+    --theme-text-title: #064e3b;
+    --theme-text-body: #065f46;
+    --theme-text-muted: #047857;
+    --theme-accent: #059669;
+    --theme-accent-hover: #047857;
+    --theme-accent-light: #ecfdf5;
+    --theme-accent-text: #047857;
+    --theme-gradient-hero: linear-gradient(135deg, #047857 0%, #059669 50%, #0d9488 100%);
+    --theme-gradient-btn: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --accent-glow: rgba(16, 185, 129, 0.25);
+  }
+
+  /* ==========================================================================
+     3. BHARAT SAFFRON (Warm sunrise amber, golden saffron, terracotta)
+     ========================================================================== */
+  .theme-saffron {
+    --theme-bg-main: #fffbeb;
+    --theme-bg-surface: #ffffff;
+    --theme-bg-elevated: #ffffff;
+    --theme-bg-subtle: #fef3c7;
+    --theme-border: #fde68a;
+    --theme-border-subtle: #fef3c7;
+    --theme-border-accent: #fcd34d;
+    --theme-text-title: #451a03;
+    --theme-text-body: #78350f;
+    --theme-text-muted: #92400e;
+    --theme-accent: #d97706;
+    --theme-accent-hover: #b45309;
+    --theme-accent-light: #fffbeb;
+    --theme-accent-text: #b45309;
+    --theme-gradient-hero: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #b45309 100%);
+    --theme-gradient-btn: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+    --accent-glow: rgba(245, 158, 11, 0.25);
+  }
+
+  /* ==========================================================================
+     4. OCEAN AZURE (Deep sky blue & coastal cyan GIS clarity)
+     ========================================================================== */
+  .theme-ocean {
+    --theme-bg-main: #f0f9ff;
+    --theme-bg-surface: #ffffff;
+    --theme-bg-elevated: #ffffff;
+    --theme-bg-subtle: #e0f2fe;
+    --theme-border: #bae6fd;
+    --theme-border-subtle: #e0f2fe;
+    --theme-border-accent: #7dd3fc;
+    --theme-text-title: #082f49;
+    --theme-text-body: #075985;
+    --theme-text-muted: #0369a1;
+    --theme-accent: #0284c7;
+    --theme-accent-hover: #0369a1;
+    --theme-accent-light: #f0f9ff;
+    --theme-accent-text: #0284c7;
+    --theme-gradient-hero: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #0369a1 100%);
+    --theme-gradient-btn: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    --accent-glow: rgba(14, 165, 233, 0.25);
+  }
+
+  /* ==========================================================================
+     5. NIGHT SATELLITE (Cyber dark mode, deep space navy with neon indigo/cyan)
+     ========================================================================== */
+  .dark {
+    --theme-bg-main: #020617;
+    --theme-bg-surface: #0f172a;
+    --theme-bg-elevated: #1e293b;
+    --theme-bg-subtle: #1e293b;
+    --theme-border: #1e293b;
+    --theme-border-subtle: #1e293b;
+    --theme-border-accent: #3730a3;
+    --theme-text-title: #f8fafc;
+    --theme-text-body: #e2e8f0;
+    --theme-text-muted: #94a3b8;
+    --theme-accent: #6366f1;
+    --theme-accent-hover: #4f46e5;
+    --theme-accent-light: #1e1b4b;
+    --theme-accent-text: #818cf8;
+    --theme-gradient-hero: linear-gradient(135deg, #312e81 0%, #0f766e 50%, #0f172a 100%);
+    --theme-gradient-btn: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    --accent-glow: rgba(99, 102, 241, 0.35);
+  }
+
+  body {
+    background-color: var(--theme-bg-main);
+    color: var(--theme-text-title);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* ==========================================================================
+   THEME UTILITY HELPER CLASSES ACROSS ALL PORTALS
+   ========================================================================== */
+.portal-card {
+  background-color: var(--theme-bg-surface);
+  border-color: var(--theme-border);
+  color: var(--theme-text-title);
+  transition: all 0.2s ease;
+}
+
+.portal-surface-subtle {
+  background-color: var(--theme-bg-subtle);
+  border-color: var(--theme-border-subtle);
+}
+
+.portal-btn-primary {
+  background: var(--theme-gradient-btn);
+  color: #ffffff;
+  box-shadow: 0 4px 14px var(--accent-glow);
+  transition: all 0.2s ease;
+}
+.portal-btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.portal-nav-active {
+  background-color: var(--theme-accent-light);
+  color: var(--theme-accent-text);
+  border-color: var(--theme-border-accent);
+}
+
+.portal-badge-accent {
+  background-color: var(--theme-accent-light);
+  color: var(--theme-accent-text);
+  border-color: var(--theme-border-accent);
+}
+
+.portal-hero-banner {
+  background: var(--theme-gradient-hero);
+  color: #ffffff;
+  box-shadow: 0 10px 25px var(--accent-glow);
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--accent-glow);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes radarSweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 6s linear infinite;
+}
